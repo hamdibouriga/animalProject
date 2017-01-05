@@ -1,0 +1,91 @@
+{% extends "::layout/layout.html.twig" %}
+
+
+{% block body %}
+
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
+            <center>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">Ajout Animal </h1>
+                    </div>
+                </div>
+            </center>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <center>
+                            <div class="panel-heading">
+                                Veuillez Remplir Tous Les champs ... Merci !
+                                {% for flashMessage in app.session.flashbag.get('notice') %}
+
+                                    <div class="alert alert-success">
+                                        {{ flashMessage }}
+                                    </div>
+
+                                {% endfor %}
+
+                            </div>
+                        </center>
+                        <div class="panel-body">
+                            <form role="form" method="POST" action="{{path('add_animal') }}">
+
+                                <div class="form-group has-warning">
+                                    <label class="control-label" for="warning">Nom</label>
+                                    {{form_widget(formAnimal.nom, {'attr': {'class': 'form-control',
+                                               'type':'text',
+                                               'required':'required'    } } ) }}
+                                </div>
+
+                                <div class="form-group has-warning">
+                                    <label class="control-label" for="warning">Age</label>
+                                    {{form_widget(formAnimal.age, {'attr': {'class': 'form-control',
+                                               'type':'number',
+                                               'required':'required'    } } ) }}
+                                </div>
+
+                                <div class="form-group has-warning">
+                                    <label class="control-label" for="warning">Famille</label>
+                                    {{form_widget(formAnimal.famille, {'attr': {'class': 'form-control',
+                                               'type':'text',
+                                               'required':'required'    } } ) }}
+                                </div>
+
+                                <div class="form-group has-warning">
+                                    <label class="control-label" for="warning">Race</label>
+                                    {{form_widget(formAnimal.race, {'attr': {'class': 'form-control',
+                                               'type':'text',
+                                               'required':'required'    } } ) }}
+
+                                </div>
+
+                                <div class="form-group has-warning">
+                                    <label class="control-label" for="warning">Nourriture</label>
+                                    {{form_widget(formAnimal.nourriture, {'attr': {'class': 'form-control',
+                                               'type':'text',
+                                               'required':'required'    } } ) }}
+                                </div>
+
+                                {{form_widget(formAnimal._token)}}
+                                <button class="btn btn-primary btn-lg" >
+                                    Ajouter Animal
+                                </button>
+
+                            </form>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

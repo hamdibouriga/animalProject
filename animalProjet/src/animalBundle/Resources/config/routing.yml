@@ -1,0 +1,15 @@
+animal_homepage:
+    path:     /
+    defaults: { _controller: animalBundle:Default:index }
+
+
+add_animal:
+    path:     /ajouterAnimal
+    defaults: { _controller: animalBundle:Animaux:ajouterAnimal }
+    
+    
+crud_animal:
+    path:     /crudAnimaux
+    defaults: { _controller: animalBundle:animal:index }   
+    
+    

@@ -1,0 +1,36 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+
+
+
+
+    <!--    Context Classes  -->
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            Modification Animal 
+        </div>
+
+        <div class="panel-body">
+            <div class="table-responsive">
+                <center>
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <input type="submit" value="Modifier" />
+                {{ form_end(edit_form) }}
+                </center>
+            </div>
+        </div>
+    </div>
+    <!--  end  Context Classes  -->
+
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('crudAnimaux_index') }}">Retour Vers List</a>
+        </li>
+    </ul>
+{% endblock %}

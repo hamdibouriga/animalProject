@@ -1,0 +1,67 @@
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+
+
+
+    <!--    Context Classes  -->
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            Information de l'animal 
+        </div>
+
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr class="success">
+                            <th>Identifiant</th>
+                            <td>{{ animal.id }}</td>
+                        </tr>
+                        <tr class="info">
+                            <th>Nom</th>
+                            <td>{{ animal.nom }}</td>
+                        </tr>
+                        <tr class="warning">
+                            <th>Age</th>
+                            <td>{{ animal.age }}</td>
+                        </tr>
+                        <tr class="danger">
+                            <th>Famille</th>
+                            <td>{{ animal.famille }}</td>
+                        </tr>
+                        <tr class="success">
+                            <th>Race</th>
+                            <td>{{ animal.race }}</td>
+                        </tr>
+                        <tr class="warning">
+                            <th>Nourriture</th>
+                            <td>{{ animal.nourriture }}</td>
+                        </tr>
+
+                        <tr >
+                            <th><a href="{{ path('crudAnimaux_index') }}">Retour Vers List</a></th>
+                            <th> <a href="{{ path('crudAnimaux_edit', { 'id': animal.id }) }}">Modifier</a></th>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--  end  Context Classes  -->
+
+
+
+
+
+
+    <center>
+        {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Supprimer">
+        {{ form_end(delete_form) }}
+    </center>
+
+
+{% endblock %}

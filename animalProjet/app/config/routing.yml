@@ -1,0 +1,15 @@
+utilisateur:
+    resource: "@UtilisateurBundle/Resources/config/routing.yml"
+    prefix:   /
+
+animal_animal:
+    resource: "@animalBundle/Controller/animalController.php"
+    type:     annotation
+
+animal:
+    resource: "@animalBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
